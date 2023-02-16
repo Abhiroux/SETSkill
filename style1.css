@@ -1,0 +1,797 @@
+@Import Url("Https://Fonts.Googleapis.Com/Css?Family=DM+Sans:400,500,700&Display=Swap");
+* {
+Box-Sizing: Border-Box;
+}
+:Root {
+--App-Container: #F3f6fd;
+--Main-Color: #1f1c2e;
+--Secondary-Color: #4a4a4a;
+--Link-Color: #1f1c2e;
+--Link-Color-Hover: #C3cff4;
+--Link-Color-Active: #Fff;
+--Link-Color-Active-Bg: #1f1c2e;
+--Projects-Section: #Fff;
+--Message-Box-Hover: #Fafcff;
+--Message-Box-Border: #E9ebf0;
+--More-List-Bg: #Fff;
+--More-List-Bg-Hover: #F6fbff;
+--More-List-Shadow: Rgba(209, 209, 209, 0.4);
+--Button-Bg: #1f1c24;
+--Search-Area-Bg: #Fff;
+--Star: #1ff1c2 E;
+--Message-Btn: #Fff;
+}
+.Dark:root {
+--App-Container: #1f1d2b;
+--App-Container: #111827;
+--Main-Color: #Fff;
+--Secondary-Color: Rgba(255, 255, 255, .8);
+--Projects-Section: #1f2937;
+--Link-Color: Rgba(255, 255, 255, .8);
+--Link-Color-Hover: Rgba(195, 207, 244, 0.1);
+--Link-Color-Active-Bg: Rgba(195, 207, 244, 0.2);
+--Button-Bg: #1f2937;
+--Search-Area-Bg: #1f2937;
+--Message-Box-Hover: #243244;
+--Message-Box-Border: Rgba(255, 255, 255, .1);
+--Star: #Ffd92c;
+--Light-Font: Rgba(255, 255, 255, .8);
+--More-List-Bg: #2f3142;
+--More-List-Bg-Hover: Rgba(195, 207, 244, 0.1);
+--More-List-Shadow: Rgba(195, 207, 244, 0.1);
+--Message-Btn: Rgba(195, 207, 244, 0.1);
+}
+Html, Body {
+Width: 100%;
+Height: 100vh;
+Margin: 0;
+}
+Body {
+Font-Family: 'DM Sans', Sans-Serif;
+Overflow: Hidden;
+Display: Flex;
+Justify-Content: Center;
+Background-Color: Var(--App-Container);
+}
+Button, A {
+Cursor: Pointer;
+}
+.App-Container {
+Width: 100%;
+Display: Flex;
+Flex-Direction: Column;
+Height: 100%;
+Background-Color: Var(--App-Container);
+Transition: 0.2s;
+Max-Width: 1800px;
+}
+.App-Container Button, .App-Container Input, .App-Container Optgroup, .App-Container Select, .App-Container Textarea {
+Font-Family: 'DM Sans', Sans-Serif;
+}
+.App-Content {
+Display: Flex;
+Height: 100%;
+Overflow: Hidden;
+Padding: 16px 24px 24px 0;
+}
+.App-Header {
+Display: Flex;
+Justify-Content: Space-Between;
+Align-Items: Center;
+Width: 100%;
+Padding: 16px 24px;
+Position: Relative;
+}
+.App-Header-Left, .App-Header-Right {
+Display: Flex;
+Align-Items: Center;
+}
+.App-Header-Left {
+Flex-Grow: 1;
+}
+.App-Header-Right Button {
+Margin-Left: 10px;
+}
+.App-Icon {
+Width: 26px;
+Height: 2px;
+Border-Radius: 4px;
+Background-Color: Var(--Main-Color);
+Position: Relative;
+}
+.App-Icon:before, .App-Icon:after {
+Content: '';
+Position: Absolute;
+Width: 12px;
+Height: 2px;
+Border-Radius: 4px;
+Background-Color: Var(--Main-Color);
+Left: 50%;
+Transform: Translatex(-50%);
+}
+.App-Icon:before {
+Top: -6px;
+}
+.App-Icon:after {
+Bottom: -6px;
+}
+.App-Name {
+Color: Var(--Main-Color);
+Margin: 0;
+Font-Size: 20px;
+Line-Height: 24px;
+Font-Weight: 700;
+Margin: 0 32px;
+}
+.Mode-Switch {
+Background-Color: Transparent;
+Border: None;
+Padding: 0;
+Color: Var(--Main-Color);
+Display: Flex;
+Justify-Content: Center;
+Align-Items: Center;
+}
+.Search-Wrapper {
+Border-Radius: 20px;
+Background-Color: Var(--Search-Area-Bg);
+Padding-Right: 12px;
+Height: 40px;
+Display: Flex;
+Justify-Content: Space-Between;
+Align-Items: Center;
+Width: 100%;
+Max-Width: 480px;
+Color: Var(--Light-Font);
+Box-Shadow: 0 2px 6px 0 Rgba(136, 148, 171, .2), 0 24px 20px -24px Rgba(71, 82, 107, .1);
+Overflow: Hidden;
+}
+.Dark .Search-Wrapper {
+Box-Shadow: None;
+}
+.Search-Input {
+Border: None;
+Flex: 1;
+Outline: None;
+Height: 100%;
+Padding: 0 20px;
+Font-Size: 16px;
+Background-Color: Var(--Search-Area-Bg);
+Color: Var(--Main-Color);
+}
+.Search-Input:placeholder {
+Color: Var(--Main-Color);
+Opacity: 0.6;
+}
+.Add-Btn {
+Color: #Fff;
+Background-Color: Var(--Button-Bg);
+Padding: 0;
+Border: 0;
+Border-Radius: 50%;
+Width: 32px;
+Height: 32px;
+Display: Flex;
+Align-Items: Center;
+Justify-Content: Center;
+}
+.Notification-Btn {
+Color: Var(--Main-Color);
+Padding: 0;
+Border: 0;
+Background-Color: Transparent;
+Height: 32px;
+Display: Flex;
+Justify-Content: Center;
+Align-Items: Center;
+}
+.Profile-Btn {
+Padding: 0;
+Border: 0;
+Background-Color: Transparent;
+Display: Flex;
+Align-Items: Center;
+Padding-Left: 12px;
+Border-Left: 2px Solid #Ddd;
+}
+.Profile-Btn Img {
+Width: 32px;
+Height: 32px;
+Object-Fit: Cover;
+Border-Radius: 50%;
+Margin-Right: 4px;
+}
+.Profile-Btn Span {
+Color: Var(--Main-Color);
+Font-Size: 16px;
+Line-Height: 24px;
+Font-Weight: 700;
+}
+.Page-Content {
+Flex: 1;
+Width: 100%;
+}
+.App-Sidebar {
+Padding: 40px 16px;
+Display: Flex;
+Flex-Direction: Column;
+Align-Items: Center;
+}
+.App-Sidebar-Link {
+Color: Var(--Main-Color);
+Color: Var(--Link-Color);
+Margin: 16px 0;
+Transition: 0.2s;
+Border-Radius: 50%;
+Flex-Shrink: 0;
+Width: 40px;
+Height: 40px;
+Display: Flex;
+Justify-Content: Center;
+Align-Items: Center;
+}
+.App-Sidebar-Link:hover {
+Background-Color: Var(--Link-Color-Hover);
+Color: Var(--Link-Color-Active);
+}
+.App-Sidebar-Link.Active {
+Background-Color: Var(--Link-Color-Active-Bg);
+Color: Var(--Link-Color-Active);
+}
+.Projects-Section {
+Flex: 2;
+Background-Color: Var(--Projects-Section);
+Border-Radius: 32px;
+Padding: 32px 32px 0 32px;
+Overflow: Hidden;
+Height: 100%;
+Display: Flex;
+Flex-Direction: Column;
+}
+.Projects-Section-Line {
+Display: Flex;
+Justify-Content: Space-Between;
+Align-Items: Center;
+Padding-Bottom: 32px;
+}
+.Projects-Section-Header {
+Display: Flex;
+Justify-Content: Space-Between;
+Align-Items: Center;
+Margin-Bottom: 24px;
+Color: Var(--Main-Color);
+}
+.Projects-Section-Header P {
+Font-Size: 24px;
+Line-Height: 32px;
+Font-Weight: 700;
+Opacity: 0.9;
+Margin: 0;
+Color: Var(--Main-Color);
+}
+.Projects-Section-Header .Time {
+Font-Size: 20px;
+}
+.Projects-Status {
+Display: Flex;
+}
+.Item-Status {
+Display: Flex;
+Flex-Direction: Column;
+Margin-Right: 16px;
+}
+.Item-Status:not(:Last-Child) .Status-Type:after {
+Content: '';
+Position: Absolute;
+Right: 8px;
+Top: 50%;
+Transform: Translatey(-50%);
+Width: 6px;
+Height: 6px;
+Border-Radius: 50%;
+Border: 1px Solid Var(--Secondary-Color);
+}
+.Status-Number {
+Font-Size: 24px;
+Line-Height: 32px;
+Font-Weight: 700;
+Color: Var(--Main-Color);
+}
+.Status-Type {
+Position: Relative;
+Padding-Right: 24px;
+Color: Var(--Secondary-Color);
+}
+.View-Actions {
+Display: Flex;
+Align-Items: Center;
+}
+.View-Btn {
+Width: 36px;
+Height: 36px;
+Display: Flex;
+Justify-Content: Center;
+Align-Items: Center;
+Padding: 6px;
+Border-Radius: 4px;
+Background-Color: Transparent;
+Border: None;
+Color: Var(--Main-Color);
+Margin-Left: 8px;
+Transition: 0.2s;
+}
+.View-Btn.Active {
+Background-Color: Var(--Link-Color-Active-Bg);
+Color: Var(--Link-Color-Active);
+}
+.View-Btn:not(.Active):Hover {
+Background-Color: Var(--Link-Color-Hover);
+Color: Var(--Link-Color-Active);
+}
+.Messages-Section {
+Flex-Shrink: 0;
+Padding-Bottom: 32px;
+Background-Color: Var(--Projects-Section);
+Margin-Left: 24px;
+Flex: 1;
+Width: 100%;
+Border-Radius: 30px;
+Position: Relative;
+Overflow: Auto;
+Transition: All 300ms Cubic-Bezier(0.19, 1, 0.56, 1);
+}
+.Messages-Section .Messages-Close {
+Position: Absolute;
+Top: 12px;
+Right: 12px;
+Z-Index: 3;
+Border: None;
+Background-Color: Transparent;
+Color: Var(--Main-Color);
+Display: None;
+}
+.Messages-Section.Show {
+Transform: TranslateX(0);
+Opacity: 1;
+Margin-Left: 0;
+}
+.Messages-Section .Projects-Section-Header {
+Position: Sticky;
+Top: 0;
+Z-Index: 1;
+Padding: 32px 24px 0 24px;
+Background-Color: Var(--Projects-Section);
+}
+.Message-Box {
+Border-Top: 1px Solid Var(--Message-Box-Border);
+Padding: 16px;
+Display: Flex;
+Align-Items: Flex-Start;
+Width: 100%;
+}
+.Message-Box:hover {
+Background-Color: Var(--Message-Box-Hover);
+Border-Top-Color: Var(--Link-Color-Hover);
+}
+.Message-Box:hover + .Message-Box {
+Border-Top-Color: Var(--Link-Color-Hover);
+}
+.Message-Box Img {
+Border-Radius: 50%;
+Object-Fit: Cover;
+Width: 40px;
+Height: 40px;
+}
+.Message-Header {
+Display: Flex;
+Align-Items: Center;
+Justify-Content: Space-Between;
+Width: 100%;
+}
+.Message-Header .Name {
+Font-Size: 16px;
+Line-Height: 24px;
+Font-Weight: 700;
+Color: Var(--Main-Color);
+Margin: 0;
+}
+.Message-Content {
+Padding-Left: 16px;
+Width: 100%;
+}
+.Star-Checkbox Input {
+Opacity: 0;
+Position: Absolute;
+Width: 0;
+Height: 0;
+}
+.Star-Checkbox Label {
+Width: 24px;
+Height: 24px;
+Display: Flex;
+Justify-Content: Center;
+Align-Items: Center;
+Cursor: Pointer;
+}
+.Dark .Star-Checkbox {
+Color: Var(--Secondary-Color);
+}
+.Dark .Star-Checkbox Input:checked + Label {
+Color: Var(--Star);
+}
+.Star-Checkbox Input:checked + Label Svg {
+Fill: Var(--Star);
+Transition: 0.2s;
+}
+.Message-Line {
+Font-Size: 14px;
+Line-Height: 20px;
+Margin: 8px 0;
+Color: Var(--Secondary-Color);
+Opacity: 0.7;
+}
+.Message-Line.Time {
+Text-Align: Right;
+Margin-Bottom: 0;
+}
+.Project-Boxes {
+Margin: 0 -8px;
+Overflow-Y: Auto;
+}
+.Project-Boxes.JsGridView {
+Display: Flex;
+Flex-Wrap: Wrap;
+}
+.Project-Boxes.JsGridView .Project-Box-Wrapper {
+Width: 33.3%;
+}
+.Project-Boxes.JsListView .Project-Box {
+Display: Flex;
+Border-Radius: 10px;
+Position: Relative;
+}
+.Project-Boxes.JsListView .Project-Box > * {
+Margin-Right: 24px;
+}
+.Project-Boxes.JsListView .More-Wrapper {
+Position: Absolute;
+Right: 16px;
+Top: 16px;
+}
+.Project-Boxes.JsListView .Project-Box-Content-Header {
+Order: 1;
+Max-Width: 120px;
+}
+.Project-Boxes.JsListView .Project-Box-Header {
+Order: 2;
+}
+.Project-Boxes.JsListView .Project-Box-Footer {
+Order: 3;
+Padding-Top: 0;
+Flex-Direction: Column;
+Justify-Content: Flex-Start;
+}
+.Project-Boxes.JsListView .Project-Box-Footer:after {
+Display: None;
+}
+.Project-Boxes.JsListView .Participants {
+Margin-Bottom: 8px;
+}
+.Project-Boxes.JsListView .Project-Box-Content-Header P {
+Text-Align: Left;
+Overflow: Hidden;
+White-Space: Nowrap;
+Text-Overflow: Ellipsis;
+}
+.Project-Boxes.JsListView .Project-Box-Header > Span {
+Position: Absolute;
+Bottom: 16px;
+Left: 16px;
+Font-Size: 12px;
+}
+.Project-Boxes.JsListView .Box-Progress-Wrapper {
+Order: 3;
+Flex: 1;
+}
+.Project-Box {
+--Main-Color-Card: #Dbf6fd;
+Border-Radius: 30px;
+Padding: 16px;
+Background-Color: Var(--Main-Color-Card);
+}
+.Project-Box-Header {
+Display: Flex;
+Align-Items: Center;
+Justify-Content: Space-Between;
+Margin-Bottom: 16px;
+Color: Var(--Main-Color);
+}
+.Project-Box-Header Span {
+Color: #4a4a4a;
+Opacity: 0.7;
+Font-Size: 14px;
+Line-Height: 16px;
+}
+.Project-Box-Content-Header {
+Text-Align: Center;
+Margin-Bottom: 16px;
+}
+.Project-Box-Content-Header P {
+Margin: 0;
+}
+.Project-Box-Wrapper {
+Padding: 8px;
+Transition: 0.2s;
+}
+.Project-Btn-More {
+Padding: 0;
+Height: 14px;
+Width: 24px;
+Height: 24px;
+Position: Relative;
+Background-Color: Transparent;
+Border: None;
+Flex-Shrink: 0;
+/*&:After, &:Before {
+Content: '';
+Position: Absolute;
+Width: 6px;
+Height: 6px;
+Border-Radius: 50%;
+Background-Color: Var(--Main-Color);
+Opacity: .8;
+Left: 50%;
+Transform: Translatex(-50%);
+}
+&:Before {
+Top: 0;
+}
+&:After {
+Bottom: 0;
+}
+*/
+}
+.More-Wrapper {
+Position: Relative;
+}
+.Box-Content-Header {
+Font-Size: 16px;
+Line-Height: 24px;
+Font-Weight: 700;
+Opacity: 0.7;
+}
+.Box-Content-Subheader {
+Font-Size: 14px;
+Line-Height: 24px;
+Opacity: 0.7;
+}
+.Box-Progress {
+Display: Block;
+Height: 4px;
+Border-Radius: 6px;
+}
+.Box-Progress-Bar {
+Width: 100%;
+Height: 4px;
+Border-Radius: 6px;
+Overflow: Hidden;
+Background-Color: #Fff;
+Margin: 8px 0;
+}
+.Box-Progress-Header {
+Font-Size: 14px;
+Font-Weight: 700;
+Line-Height: 16px;
+Margin: 0;
+}
+.Box-Progress-Percentage {
+Text-Align: Right;
+Margin: 0;
+Font-Size: 14px;
+Font-Weight: 700;
+Line-Height: 16px;
+}
+.Project-Box-Footer {
+Display: Flex;
+Justify-Content: Space-Between;
+Padding-Top: 16px;
+Position: Relative;
+}
+.Project-Box-Footer:after {
+Content: '';
+Position: Absolute;
+Background-Color: Rgba(255, 255, 255, 0.6);
+Width: Calc(100% + 32px);
+Top: 0;
+Left: -16px;
+Height: 1px;
+}
+.Participants {
+Display: Flex;
+Align-Items: Center;
+}
+.Participants Img {
+Width: 20px;
+Height: 20px;
+Border-Radius: 50%;
+Overflow: Hidden;
+Object-Fit: Cover;
+}
+.Participants Img:not(:First-Child) {
+Margin-Left: -8px;
+}
+.Add-Participant {
+Width: 20px;
+Height: 20px;
+Border-Radius: 50%;
+Border: None;
+Background-Color: Rgba(255, 255, 255, 0.6);
+Margin-Left: 6px;
+Display: Flex;
+Justify-Content: Center;
+Align-Items: Center;
+Padding: 0;
+}
+.Days-Left {
+Background-Color: Rgba(255, 255, 255, 0.6);
+Font-Size: 12px;
+Border-Radius: 20px;
+Flex-Shrink: 0;
+Padding: 6px 16px;
+Font-Weight: 700;
+}
+.Mode-Switch.Active .Moon {
+Fill: Var(--Main-Color);
+}
+.Messages-Btn {
+Border-Radius: 4px 0 0 4px;
+Position: Absolute;
+Right: 0;
+Top: 58px;
+Background-Color: Var(--Message-Btn);
+Border: None;
+Color: Var(--Main-Color);
+Display: Flex;
+Justify-Content: Center;
+Align-Items: Center;
+Padding: 4px;
+Display: None;
+}
+@Media Screen And (Max-Width: 980px) {
+.Project-Boxes.JsGridView .Project-Box-Wrapper {
+Width: 50%;
+}
+.Status-Number, .Status-Type {
+Font-Size: 14px;
+}
+.Status-Type:after {
+Width: 4px;
+Height: 4px;
+}
+.Item-Status {
+Margin-Right: 0;
+}
+}
+@Media Screen And (Max-Width: 880px) {
+.Messages-Section {
+Transform: TranslateX(100%);
+Position: Absolute;
+Opacity: 0;
+Top: 0;
+Z-Index: 2;
+Height: 100%;
+Width: 100%;
+}
+.Messages-Section .Messages-Close {
+Display: Block;
+}
+.Messages-Btn {
+Display: Flex;
+}
+}
+@Media Screen And (Max-Width: 720px) {
+.App-Name, .Profile-Btn Span {
+Display: None;
+}
+.Add-Btn, .Notification-Btn, .Mode-Switch {
+Width: 20px;
+Height: 20px;
+}
+.Add-Btn Svg, .Notification-Btn Svg, .Mode-Switch Svg {
+Width: 16px;
+Height: 16px;
+}
+.App-Header-Right Button {
+Margin-Left: 4px;
+}
+}
+@Media Screen And (Max-Width: 520px) {
+.Projects-Section {
+Overflow: Auto;
+}
+.Project-Boxes {
+Overflow-Y: Visible;
+}
+.App-Sidebar, .App-Icon {
+Display: None;
+}
+.App-Content {
+Padding: 16px 12px 24px 12px;
+}
+.Status-Number, .Status-Type {
+Font-Size: 10px;
+}
+.View-Btn {
+Width: 24px;
+Height: 24px;
+}
+.App-Header {
+Padding: 16px 10px;
+}
+.Search-Input {
+Max-Width: 120px;
+}
+.Project-Boxes.JsGridView .Project-Box-Wrapper {
+Width: 100%;
+}
+.Projects-Section {
+Padding: 24px 16px 0 16px;
+}
+.Profile-Btn Img {
+Width: 24px;
+Height: 24px;
+}
+.App-Header {
+Padding: 10px;
+}
+.Projects-Section-Header P, .Projects-Section-Header .Time {
+Font-Size: 18px;
+}
+.Status-Type {
+Padding-Right: 4px;
+}
+.Status-Type:after {
+Display: None;
+}
+.Search-Input {
+Font-Size: 14px;
+}
+.Messages-Btn {
+Top: 48px;
+}
+.Box-Content-Header {
+Font-Size: 12px;
+Line-Height: 16px;
+}
+.Box-Content-Subheader {
+Font-Size: 12px;
+Line-Height: 16px;
+}
+.Project-Boxes.JsListView .Project-Box-Header > Span {
+Font-Size: 10px;
+}
+.Box-Progress-Header {
+Font-Size: 12px;
+}
+.Box-Progress-Percentage {
+Font-Size: 10px;
+}
+.Days-Left {
+Font-Size: 8px;
+Padding: 6px 6px;
+Text-Align: Center;
+}
+.Project-Boxes.JsListView .Project-Box > * {
+Margin-Right: 10px;
+}
+.Project-Boxes.JsListView .More-Wrapper {
+Right: 2px;
+Top: 10px;
+}
+}
+
+#todo{
+    width: 40px;
+    height: 40px;
+    float: left;
+}
